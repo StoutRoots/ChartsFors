@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ChartJS Tutorial for WebDesignTuts</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/charts-background.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/knockout-3.0.0.js"></script>
+    <script src="js/globalize.min.js"></script>
+    <script src="js/dx.chartjs.js"></script>
+    <!--<script src="js/dx.chartjs.debug.js"></script>-->
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <form action="#" method="post" id="chart-form">
+
+            <label><input type="file" id="chart-file"/></label>
+
+            <label>Regression&nbsp;
+                <select id="chart-regression-type">
+                    <option value="">Normal</option>
+                    <option value="log">Logarithmic</option>
+                </select>
+            </label>
+
+            <label>Add gridlines
+                <input type="checkbox" id="chart-gridlines"/>
+            </label>
+        </form>
+        <div class="container clearfix">
+            <h1>Chart <span>From CSV Data</span></h1>
+        </div>
+    </header>
+
+    <div class="container clearfix">
+        <div class="main-chart">
+            <div class="chart-legend">
+                <h3>Acceleration X-Direction</h3>
+            </div>
+            <div class="canvas-container">
+                <div id="lineChartContainer" style="width: 65%; height: 440px;"></div>
+                <div id="gaugeChartContainer" style="width: 35%; height: 440px;"></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+
+        <ul class="row-of-small-charts">
+            <li>
+                <div id="rowChart1" data-bind="dxChart: chartOptions"></div>
+                <input type="file" class="chart-file-input" id="smallChartInputFile1" data-target="rowChart1"/>
+            </li>
+            <li>
+                <div id="rowChart2" data-bind="dxChart: chartOptions"></div>
+                <input type="file" class="chart-file-input" id="smallChartInputFile2" data-target="rowChart2"/>
+            </li>
+            <li>
+                <div id="rowChart3" data-bind="dxChart: chartOptions"></div>
+                <input type="file" class="chart-file-input" id="smallChartInputFile3" data-target="rowChart3"/>
+            </li>
+            <li>
+                <div id="rowChart4" data-bind="dxChart: chartOptions"></div>
+                <input type="file" class="chart-file-input" id="smallChartInputFile4" data-target="rowChart4"/>
+            </li>
+            <li>
+                <div id="rowChart5" data-bind="dxChart: chartOptions"></div>
+                <input type="file" class="chart-file-input" id="smallChartInputFile5" data-target="rowChart5"/>
+            </li>
+        </ul>
+
+
+    </div>
+    <div class="push"></div>
+</div>
+
+<script src="js/chartsColors.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
