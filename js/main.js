@@ -38,8 +38,10 @@ function handleQueryResponse(response) {
   }
 
   var data = response.getDataTable();
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-  chart.draw(data, {width: 400, height: 240, is3D: true});
+  //var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  //chart.draw(data, {width: 400, height: 240, is3D: true});
+}
+///////
 
         var arrMatches = null;
         while (arrMatches = objPattern.exec(strData)) {
@@ -68,11 +70,11 @@ function handleQueryResponse(response) {
         //handle success
         if (typeof  onload === 'function') {
             reader.onload = function (e) {
-                onload(CSVToArray(e.target.result));
+                onload(initialize(e.target.result));
             };
         } else {
             reader.onload = function (e) {
-                csvData.main = {data: CSVToArray(e.target.result)};
+                csvData.main = {data: initialize(e.target.result)};
                 drawMainChart();
             };
         }
